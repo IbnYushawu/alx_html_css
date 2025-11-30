@@ -1,0 +1,89 @@
+/* Make the body a flex container in column direction */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Use full viewport height */
+    margin: 0;      /* Remove default margin */
+}
+
+/* Main container with row direction for article + aside */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto;      /* Allow main to grow and fill available space */
+    overflow: hidden; /* Prevent main from overflowing body */
+}
+
+/* Article takes 2/3 of the row */
+article {
+    flex: 2;
+    overflow-y: auto;  /* Allow vertical scrolling */
+    padding: 1rem;     /* Optional padding for readability */
+}
+
+/* Aside takes 1/3 of the row */
+aside {
+    flex: 1;
+    overflow-y: auto;  /* Allow vertical scrolling */
+    padding: 1rem;     /* Optional padding for readability */
+}
+
+/* Optional: Basic styling for header and footer */
+header, footer {
+    padding: 1rem;
+    background-color: #e5e8eb; /* Light grey background */
+}
+
+/* Optional: Add minimal spacing for nav links inside header */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem; /* space between nav items */
+}
+
+header nav ul li {
+    display: inline;
+}
+/* Change background and text colors */
+body {
+    background-color: #f9f9f9;  /* Light grey background */
+    color: #333;                 /* Dark text for readability */
+}
+
+/* Style header */
+header {
+    background-color: #004080;   /* Navy blue header */
+    color: white;
+    padding: 1rem;
+}
+
+/* Style navigation links */
+header nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style article content */
+article {
+    background-color: #ffffff;  /* White background */
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Style aside content */
+aside {
+    background-color: #e6f2ff;  /* Light blue */
+    border-left: 2px solid #004080;
+    padding: 1rem;
+}
+
+/* Logo class (already works if you add it in HTML) */
+.logo {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
