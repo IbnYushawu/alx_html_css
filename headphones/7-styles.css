@@ -1,0 +1,445 @@
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- VARIABLES ---------- */
+:root {
+  --accent: #ff6565;
+  --max-width: 1000px;
+  --text-white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --font-main: "Source Sans Pro", sans-serif;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: var(--font-main);
+  background: #111;
+  color: var(--text-white);
+}
+
+.container {
+  max-width: var(--max-width);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  width: 100%;
+  padding: 25px 0;
+  background-image: url(images/headphones_hero_1.jpg);
+  position: relative;   /* FIXED: removes overlapping */
+}
+
+/* ---------- HERO ---------- */
+.hero-content {
+  padding-top: 120px;   /* instead of 220px */
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav a:hover,
+.nav a:active {
+  color: var(--accent);
+}
+
+/* Mobile menu icon */
+.menu-btn {
+  width: 30px;
+  height: 30px;
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-btn span {
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  height: 50vh;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-content .subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: var(--accent);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  color: var(--text-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+}
+
+.description {
+  margin: 40px auto 0;
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ---------- WHAT WE DO SECTION ---------- */
+.services {
+  padding: 100px 20px;
+  margin: 0;           
+  text-align: center;
+  background: #fff;
+  color: #000;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  margin-top: 60px;     /* instead of 400px */
+}
+
+.section-description {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  font-size: 14px;
+  line-height: 1.6;     /* instead of 5 */
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.service-item {
+  padding: 20px;
+}
+
+.service-item h3 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+}
+
+.service-item p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.icon {
+  font-size: 70px;
+  color: var(--accent);
+}
+/* ---------------- WHAT WE DO – Animations ---------------- */
+.service-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Hover animation: scale + lift + glow */
+.service-item:hover {
+  transform: translateY(-10px) scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+/* ---------- MOBILE (<480px) ---------- */
+@media (max-width: 480px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services {
+    padding: 60px 0;
+  }
+}
+
+/* ---------- RESULTS SECTION ---------- */
+.results {
+  position: relative;
+  padding: 80px 0;
+  background: url("images/headphones_hero_2.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.results .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.results .container {
+  position: relative;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.result-card p {
+  font-size: 16px;
+}
+
+.pentagon-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.pentagon {
+  width: 120px;
+  height: 120px;
+  background: rgb(189, 58, 58);
+  clip-path: polygon(
+    50% 0%,
+    100% 38%,
+    81% 100%,
+    19% 100%,
+    0% 38%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ---------------- OUR RESULTS – Animations ---------------- */
+
+/* Pentagons float up and down */
+.result-card {
+  animation: floatUpDown 3s ease-in-out infinite;
+  transition: transform 0.4s ease;
+}
+
+/* Slight pop on hover */
+.result-card:hover {
+  transform: scale(1.1);
+}
+
+/* Float animation */
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Nice subtle animation */
+@keyframes pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- CONTACT SECTION ---------- */
+.contact {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: var(--font-main);
+  transition: all 0.2s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 101, 101, 0.3);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  width: 200px;
+  align-self: center;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #071629;
+  color: #fff;
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  height: 40px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.footer-text {
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* ---------- MOBILE (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .hero-content {
+    padding-top: 160px; 
+  }
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  
+ .services {
+    padding: 60px 20px;
+  }
+  .service-grid,
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

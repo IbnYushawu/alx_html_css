@@ -1,0 +1,165 @@
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- VARIABLES ---------- */
+:root {
+  --accent: #FF6565;
+  --max-width: 1000px;
+  --text-white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --font-main: "Source Sans Pro", sans-serif;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: var(--font-main);
+  background: #111;
+  color: var(--text-white);
+}
+
+.container {
+  max-width: var(--max-width);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 0;
+  background-image: url(images/headphones_hero_1.jpg);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* NAV for desktop */
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover,
+.nav a:active {
+  color: var(--accent);
+}
+
+/* Mobile menu icon */
+.menu-btn {
+  width: 30px;
+  height: 30px;
+  display: none;
+  background: none;
+  border: none;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-btn span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  height: 100vh;
+  position: relative;
+  background: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  padding-top: 180px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-content .subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: var(--accent);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  color: var(--text-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cta-btn:hover,
+.cta-btn:active {
+  opacity: 0.9;
+}
+
+.description {
+  margin: 40px auto 0;
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ---------- RESPONSIVE: MOBILE (<480px) ---------- */
+@media (max-width: 480px) {
+
+  .nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .hero-content {
+    padding-top: 220px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .cta-btn {
+    margin-top: 20px;
+  }
+}
